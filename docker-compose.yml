@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  string_to_hex:
+    image: geircode/string_to_hex:latest
+    build:
+      context: .
+      dockerfile: Dockerfile    
+    container_name: string_to_hex-1
+    volumes:
+      # - ".:/app"       
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - string_to_hex_network
+networks:
+  string_to_hex_network:
+          
